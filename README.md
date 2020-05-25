@@ -7,7 +7,6 @@ Table of Contents
 * [Table of Contents](#table-of-contents)
 * [Recon](#Recon)
   * [File enumeration](#File-enumeration)
-      * [Common](#Common)
       * [Disk files](#Disk-files)
       * [Images](#Images)
       * [Audio](#Audio)
