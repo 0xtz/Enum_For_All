@@ -5,12 +5,12 @@ Table of Contents
 [TOC]
 
 * [Table of Contents](#table-of-contents)
-* [Recon](#-Recon-:)
-  * [File enumeration](##File-enumeration)
-      * [Common](##Common)
-      * [Disk files](##Disk-files)
-      * [Images](##Images)
-      * [Audio](###Audio)
+* [Recon](#Recon)
+  * [File enumeration](#File-enumeration)
+      * [Common](#Common)
+      * [Disk files](#Disk-files)
+      * [Images](#Images)
+      * [Audio](#Audio)
   * [Port 7 - Echo tcp/udp](#Port-7---Echo-tcp/udp)
   * [Port 21 - FTP](#Port-21---FTP)
   * [Port 22 - SSH](#Port-22---SSH)
