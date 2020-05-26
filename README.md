@@ -2252,9 +2252,11 @@ done
 ```
 #### Linux Privesc Tools
 
-[GTFOBins](https://gtfobins.github.io/)
-[LinEnum](https://github.com/rebootuser/LinEnum)
-[LinuxExploitSuggester](https://github.com/mzet-/linux-exploit-suggester)
+- [GTFOBins](https://gtfobins.github.io/)
+
+- [LinEnum](https://github.com/rebootuser/LinEnum)
+
+- [LinuxExploitSuggester](https://github.com/mzet-/linux-exploit-suggester)
 
 ### Linux Precompiled Exploits
 
