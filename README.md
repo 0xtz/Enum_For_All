@@ -2,7 +2,6 @@
 
 Table of Contents
 =================
-[TOC]
 
 * [Table of Contents](#table-of-contents)
 * [Recon](#Recon)
@@ -156,7 +155,7 @@ Table of Contents
             * [Tcpdump](#Tcpdump)
             * [Interesting files](#Interesting-files)
 
-# Recon :
+# Recon
 
 ```bash
 # Enumerate subnet
